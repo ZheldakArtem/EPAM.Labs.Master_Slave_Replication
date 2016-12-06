@@ -1,0 +1,17 @@
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll.config
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+C:\Users\Artem\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll.config
+C:\Users\Artem\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+C:\Users\Artem\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+C:\Users\Artem\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Artem\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+C:\Users\Artem\Source\Repos\SampleUserService\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Desktop\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll.config
+C:\Users\Artsem_Zhaldak\Desktop\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Desktop\SampleService\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Desktop\SampleService\MyServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Artsem_Zhaldak\Desktop\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Desktop\SampleService\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
