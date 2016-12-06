@@ -19,3 +19,10 @@ C:\Users\Artsem_Zhaldak\Desktop\SampleService\MasterSlaveReplication\bin\Debug\M
 C:\Users\Artsem_Zhaldak\Desktop\SampleService\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.csprojResolveAssemblyReference.cache
 C:\Users\Artsem_Zhaldak\Desktop\SampleService\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.dll
 C:\Users\Artsem_Zhaldak\Desktop\SampleService\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\bin\Debug\MasterSlaveReplication.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\bin\Debug\MasterSlaveReplication.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\bin\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\bin\Debug\MyServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.csprojResolveAssemblyReference.cache
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\SampleUserService\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.pdb

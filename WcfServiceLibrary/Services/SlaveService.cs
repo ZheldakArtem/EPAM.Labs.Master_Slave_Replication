@@ -26,13 +26,13 @@ namespace WcfServiceLibrary
 
         private static void Init()
         {
-            for (int i = 1; i <= 5; i++)
+            for (int i = 0; i < 5; i++)
             {
                 CreateSlave(i);
             }
         }
 
-        private static void CreateSlave(int i)
+        private static void CreateSlave(int number)
         {
 
             var appDomainSetup = new AppDomainSetup
@@ -41,10 +41,10 @@ namespace WcfServiceLibrary
                 PrivateBinPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Slave")
             };
 
-            AppDomain domain = AppDomain.CreateDomain("Slave" + i, null, appDomainSetup);
+            AppDomain domain = AppDomain.CreateDomain("Slave" + number, null, appDomainSetup);
 
 
-            var slave = (Slave)domain.CreateInstanceAndUnwrap("MasterSlaveReplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", typeof(Slave).FullName, false, BindingFlags.Default, null, new object[] { 288 + i }, null, null);
+            var slave = (Slave)domain.CreateInstanceAndUnwrap("MasterSlaveReplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", typeof(Slave).FullName, false, BindingFlags.Default, null, new object[] { 228 + number }, null, null);
             new Thread(() => slave.ListenMaster()).Start();
             slaves.Add(slave);
         }
