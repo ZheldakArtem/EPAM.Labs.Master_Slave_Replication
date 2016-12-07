@@ -1,1 +1,1 @@
-# SampleUserService
+# Master - slave replication
