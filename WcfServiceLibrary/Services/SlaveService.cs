@@ -13,26 +13,26 @@ namespace WcfServiceLibrary
 {
     public class SlaveService : ISlaveService
     {
-        public static bool toggle;
-        public static readonly int numberSlaves;
+
         public static List<Slave> slaves;
         static SlaveService()
         {
-            numberSlaves = 5;
-
             slaves = new List<Slave>();
-            Init();
         }
 
-        private static void Init()
+        public static void Start(int[] ports)
         {
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < ports.Length; i++)
             {
-                CreateSlave(i);
+                CreateSlave(ports[i]);
             }
         }
+        private static void Init()
+        {
 
-        private static void CreateSlave(int number)
+        }
+
+        private static void CreateSlave(int port)
         {
 
             var appDomainSetup = new AppDomainSetup
@@ -41,10 +41,10 @@ namespace WcfServiceLibrary
                 PrivateBinPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Slave")
             };
 
-            AppDomain domain = AppDomain.CreateDomain("Slave" + number, null, appDomainSetup);
+            AppDomain domain = AppDomain.CreateDomain($"Slave listen {port} port", null, appDomainSetup);
 
 
-            var slave = (Slave)domain.CreateInstanceAndUnwrap("MasterSlaveReplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", typeof(Slave).FullName, false, BindingFlags.Default, null, new object[] { 228 + number }, null, null);
+            var slave = (Slave)domain.CreateInstanceAndUnwrap("MasterSlaveReplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", typeof(Slave).FullName, false, BindingFlags.Default, null, new object[] { port }, null, null);
             new Thread(() => slave.ListenMaster()).Start();
             slaves.Add(slave);
         }

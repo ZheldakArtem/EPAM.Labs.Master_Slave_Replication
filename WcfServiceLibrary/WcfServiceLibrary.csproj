@@ -46,7 +46,7 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CUI\InitialSettingsSections.cs" />
+    <Compile Include="CustomConfigSections.cs" />
     <Compile Include="Interfaces\IMasterService.cs" />
     <Compile Include="Interfaces\ISlaveService.cs" />
     <Compile Include="Mapper.cs" />

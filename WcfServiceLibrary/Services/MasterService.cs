@@ -7,7 +7,7 @@ using System.Text;
 using MyServiceLibrary;
 using MasterSlaveReplication;
 using System.IO;
-
+using System.Configuration;
 namespace WcfServiceLibrary
 {
     public class MasterService : IMasterService
@@ -15,8 +15,12 @@ namespace WcfServiceLibrary
         private static readonly Master master;
         static MasterService()
         {
-            SlaveService.toggle = true;
-                        master = new Master(5);
+            Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+            var sections = cfg.Sections;
+            var settings = (CustomConfigSection)sections["initialSettings"];
+            var ports = settings.ServiceNodesItems.ToArray();
+            SlaveService.Start(ports);
+            master = new Master(ports);
         }
 
         public int Add(UserDataContract userDC) => master.Add(userDC.ToUser());
@@ -37,5 +41,6 @@ namespace WcfServiceLibrary
 
         public bool Update(UserDataContract userDC) => master.Update(userDC.ToUser());
 
+       
     }
 }

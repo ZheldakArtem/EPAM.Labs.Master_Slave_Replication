@@ -26,10 +26,9 @@ namespace MasterSlaveReplication
     public class Master
     {
         private readonly UserService userService;
-        private static readonly int FIRSTPORT = 228;
-        private readonly int ports;
+        private readonly int[] ports;
 
-        public Master(int ports)
+        public Master(int[] ports)
         {
             this.ports = ports;
             this.userService = new UserService();
@@ -88,9 +87,9 @@ namespace MasterSlaveReplication
             // Note, for this client to work you need to have a TcpServer 
             // connected to the same address as specified by the server, port
             // combination.
-            for (int i = 0; i < ports; i++)
+            for (int i = 0; i < ports.Length; i++)
             {
-                using (TcpClient client = new TcpClient("127.0.0.1", FIRSTPORT + i))
+                using (TcpClient client = new TcpClient("127.0.0.1", ports[i]))
                 {
                     using (NetworkStream stream = client.GetStream())
                     {

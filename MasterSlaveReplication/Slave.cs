@@ -15,14 +15,14 @@ namespace MasterSlaveReplication
     {
         private readonly int port;
         private readonly UserService userService;
-
+        private readonly object lockObg = new object();
         public Slave(int port)
         {
             this.port = port;
             this.userService = new UserService();
         }
 
-        public User GetUserById(int id) => this.userService.GetUserById(id);
+        public User GetUserById(int id)  => this.userService.GetUserById(id);
 
         public IList<User> SearchByName(User user) => this.userService.SearchByName(user);
 
@@ -66,7 +66,7 @@ namespace MasterSlaveReplication
             }
             catch (SocketException e)
             {
-               
+
             }
             finally
             {
