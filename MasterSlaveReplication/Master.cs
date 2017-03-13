@@ -13,8 +13,8 @@ namespace MasterSlaveReplication
     [Serializable]
     public class Message
     {
-        public User User { get; }
-        public Operation Operation { get; }
+        public User User { get; set; }
+        public Operation Operation { get; set; }
 
         public Message(User user, Operation operation)
         {
@@ -70,15 +70,30 @@ namespace MasterSlaveReplication
             return result;
         }
 
-        public User GetUserById(int id) => this.userService.GetUserById(id);
+	    public User GetUserById(int id)
+	    {
+		    return this.userService.GetUserById(id);
+	    }
 
-        public IList<User> SearchByName(User user) => this.userService.SearchByName(user);
+	    public IList<User> SearchByName(User user)
+	    {
+		    return this.userService.SearchByName(user);
+	    }
 
-        public IList<User> SearchByLastName(User user) => this.userService.SearchByLastName(user);
+	    public IList<User> SearchByLastName(User user)
+	    {
+		    return this.userService.SearchByLastName(user);
+	    }
 
-        public IList<User> SearchByLastAndFirstName(User user) => this.userService.SearchByLastAndFirstName(user);
+	    public IList<User> SearchByLastAndFirstName(User user)
+	    {
+		    return this.userService.SearchByLastAndFirstName(user);
+	    }
 
-        public IList<User> GetUsers() => this.userService.GetUsers();
+	    public IList<User> GetUsers()
+	    {
+		    return this.userService.GetUsers();
+	    }
 
         private void SendMessage(Message message)
         {

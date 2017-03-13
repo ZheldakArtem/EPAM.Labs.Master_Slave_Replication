@@ -38,3 +38,13 @@ C:\Users\Artem\Source\Repos\SampleUserService2\WcfServiceLibrary\bin\Debug\MySer
 C:\Users\Artem\Source\Repos\SampleUserService2\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Artem\Source\Repos\SampleUserService2\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
 C:\Users\Artem\Source\Repos\SampleUserService2\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll.config
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\WcfServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\MasterSlaveReplication.dll
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\MasterSlaveReplication.pdb
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\bin\Debug\MyServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Desktop\Diploma\WcfServiceLibrary\obj\Debug\WcfServiceLibrary.pdb

@@ -1,20 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MyServiceLibrary;
+using System.Reflection;
 using System.Threading;
 using MasterSlaveReplication;
-using System.IO;
-using System.Reflection;
+using MyServiceLibrary;
 
-namespace WcfServiceLibrary
+namespace WcfServiceLibrary.Services
 {
     public class SlaveService : ISlaveService
     {
-
-        public static List<Slave> slaves;
+	    private static List<Slave> slaves;
         static SlaveService()
         {
             slaves = new List<Slave>();
@@ -41,7 +38,7 @@ namespace WcfServiceLibrary
                 PrivateBinPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Slave")
             };
 
-            AppDomain domain = AppDomain.CreateDomain($"Slave listen {port} port", null, appDomainSetup);
+            AppDomain domain = AppDomain.CreateDomain(string.Format("Slave listen {0} port",port), null, appDomainSetup);
 
 
             var slave = (Slave)domain.CreateInstanceAndUnwrap("MasterSlaveReplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", typeof(Slave).FullName, false, BindingFlags.Default, null, new object[] { port }, null, null);

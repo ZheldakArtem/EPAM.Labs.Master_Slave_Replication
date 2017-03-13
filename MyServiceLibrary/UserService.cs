@@ -77,12 +77,15 @@ namespace MyServiceLibrary
             return this.userStorage.Delete(user);
         }
 
-        /// <summary>
-        /// Method for getting user by id
-        /// </summary>
-        /// <param name="id">id</param>
-        /// <returns>user</returns>
-        public User GetUserById(int id) => this.userStorage.GetUserById(id);
+	    /// <summary>
+	    /// Method for getting user by id
+	    /// </summary>
+	    /// <param name="id">id</param>
+	    /// <returns>user</returns>
+	    public User GetUserById(int id)
+	    {
+		    return this.userStorage.GetUserById(id);
+	    }
 
         /// <summary>
         /// Method for searching users by name.
@@ -136,7 +139,7 @@ namespace MyServiceLibrary
         /// <returns>boolean on success</returns>
         public bool UpdateUser(User user)
         {
-            if (user == null || user.Id == 0)
+            if (user == null)
             {
                 throw new ArgumentNullException();
             }
@@ -144,11 +147,14 @@ namespace MyServiceLibrary
             return userStorage.UpdateUser(user);
         }
 
-        /// <summary>
-        /// Get all colelction of users
-        /// </summary>
-        /// <returns>Collection users</returns>
-        public IList<User> GetUsers() => this.userStorage.GetUsers();
+	    /// <summary>
+	    /// Get all colelction of users
+	    /// </summary>
+	    /// <returns>Collection users</returns>
+	    public IList<User> GetUsers()
+	    {
+		    return this.userStorage.GetUsers();
+	    }
 
         /// <summary>
         /// The store service state
@@ -167,10 +173,13 @@ namespace MyServiceLibrary
             return this.dumper.GetDump();
         }
 
-        /// <summary>
-        /// Method for generating id.
-        /// </summary>
-        /// <returns>Id</returns>
-        private int SetUserId() => this.lastId == 0 ? this.increment(0) : this.increment(lastId);
+	    /// <summary>
+	    /// Method for generating id.
+	    /// </summary>
+	    /// <returns>Id</returns>
+	    private int SetUserId()
+	    {
+			return this.lastId == 0 ? this.increment(0) : this.increment(lastId);
+	    }
     }
 }

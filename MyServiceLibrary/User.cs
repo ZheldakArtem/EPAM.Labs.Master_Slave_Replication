@@ -59,7 +59,7 @@ namespace MyServiceLibrary
 
         public override string ToString()
         {
-            return $"Name: {this.FirstName} \n Sername: {this.LastName} \n Date Of Birthday: {this.DateOfBirth}";
+			return string.Format("Name: {0} \n Sername: {1} \n Date Of Birthday: {2}", this.FirstName, this.LastName, this.DateOfBirth);
         }
     }
 }

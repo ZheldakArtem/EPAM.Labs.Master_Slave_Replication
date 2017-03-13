@@ -22,15 +22,30 @@ namespace MasterSlaveReplication
             this.userService = new UserService();
         }
 
-        public User GetUserById(int id)  => this.userService.GetUserById(id);
+	    public User GetUserById(int id)
+	    {
+		    return this.userService.GetUserById(id);
+	    }
 
-        public IList<User> SearchByName(User user) => this.userService.SearchByName(user);
+	    public IList<User> SearchByName(User user)
+	    {
+		    return this.userService.SearchByName(user);
+	    }
 
-        public IList<User> SearchByLastName(User user) => this.userService.SearchByLastName(user);
+	    public IList<User> SearchByLastName(User user)
+	    {
+		    return this.userService.SearchByLastName(user);
+	    }
 
-        public IList<User> SearchByLastAndFirstName(User user) => this.userService.SearchByLastAndFirstName(user);
+	    public IList<User> SearchByLastAndFirstName(User user)
+	    {
+		    return this.userService.SearchByLastAndFirstName(user);
+	    }
 
-        public IList<User> GetUsers() => this.userService.GetUsers();
+	    public IList<User> GetUsers()
+	    {
+		    return this.userService.GetUsers();
+	    }
 
         public void ListenMaster()
         {
@@ -75,11 +90,20 @@ namespace MasterSlaveReplication
             }
         }
 
-        private void Add(User user) => this.userService.Add(user);
+	    private void Add(User user)
+	    {
+		    this.userService.Add(user);
+	    }
 
-        private void Update(User user) => this.userService.UpdateUser(user);
+	    private void Update(User user)
+	    {
+		   this.userService.UpdateUser(user);
+	    }
 
-        private void Delete(User user) => this.userService.Delete(user);
+	    private void Delete(User user)
+	    {
+		    this.userService.Delete(user);
+	    }
 
         private void MakeAction(Message message)
         {

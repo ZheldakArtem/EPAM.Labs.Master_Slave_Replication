@@ -10,39 +10,48 @@ namespace MyServiceLibrary
     [Serializable]
     public class ListUserStorage : IStorage<User>
     {
-        private IList<User> listUsers;
+        private IList<User> _listUsers;
 
         #region ctors
         public ListUserStorage()
         {
-            this.listUsers = new List<User>();
+            this._listUsers = new List<User>();
         }
 
         public ListUserStorage(IList<User> users)
         {
-            listUsers = users;
+            _listUsers = users;
         }
 
         #endregion
 
         public int Add(User user)
         {
-            listUsers.Add(user);
+            _listUsers.Add(user);
             return user.Id;
         }
 
-        public bool Delete(User user) => listUsers.Remove(user);
+	    public bool Delete(User user)
+	    {
+		    return _listUsers.Remove(user);
+	    }
 
 
         public IEnumerator<User> GetEnumerator()
         {
-            return this.listUsers.GetEnumerator();
+            return this._listUsers.GetEnumerator();
         }
 
-        public User GetUserById(int id) => this.listUsers.FirstOrDefault(u => u.Id == id);
+	    public User GetUserById(int id)
+	    {
+			return	this._listUsers.FirstOrDefault(u => u.Id == id);
+	    }
 
 
-        public IList<User> GetUsers() => listUsers;
+	    public IList<User> GetUsers()
+	    {
+		    return _listUsers;
+	    }
 
 
         public IList<User> SearchUsers(params Func<User, bool>[] searchCollection)
