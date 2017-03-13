@@ -42,7 +42,7 @@ namespace MyServiceLibrary.Tests
                 DateOfBirth = DateTime.Now
              }
     };
-        #region tests
+        #region testsListUser
         [TestMethod]
         [ExpectedException(typeof(ArgumentNullException))]
         public void Add_NullUser_ExceptionThrown()
@@ -233,10 +233,34 @@ namespace MyServiceLibrary.Tests
         }
         #endregion
 
-        [TestMethod]
-        public void TEstSlaveMaster()
-        {
+		//[TestMethod]
+		//public void TEstSlaveMaster()
+		//{
 
-        }
-    }
+		//}
+
+		#region testsDbUser
+		[TestMethod]
+		public void SearchDbUserByFName()
+		{
+			var service = new UserService(new DbStorage.DbStorage(users,"Slave_1"));
+
+			var artemName = service.SearchByName(new User()
+			{
+				FirstName = "Artem",
+				LastName = "Pupin",
+				DateOfBirth = DateTime.Now
+			});
+			var dimaName = service.SearchByName(new User()
+			{
+				FirstName = "Dima",
+				LastName = "Pupin",
+				DateOfBirth = DateTime.Now
+			});
+
+			Assert.AreEqual(2, artemName.Count());
+			Assert.AreEqual(1, dimaName.Count());
+		}
+		#endregion
+	}
 }
