@@ -1,34 +1,23 @@
-﻿using MyServiceLibrary;
+﻿using ServiceLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ServiceLibrary.Model;
 
 namespace WcfServiceLibrary
 {
    public static class Mapper
     {
-        public static User ToUser(this UserDataContract userDC)
+        public static User ToUser(this UserDataContract userDc)
         {
             return new User()
             {
-                Id = userDC.Id,
-                FirstName = userDC.FirstName,
-                LastName = userDC.LastName,
-                DateOfBirth = userDC.DateOfBirth,
-                UserGender = userDC.UserGender,
-                UserVisa = userDC.UserVisa.ToVisa()
-            };
-        }
-
-        public static Visa ToVisa(this VisaDataContract visa)
-        {
-            return new Visa()
-            {
-                Country =visa.Country,
-                Start=visa.Start,
-                End=visa.End
+                Id = userDc.Id,
+                FirstName = userDc.FirstName,
+                LastName = userDc.LastName,
+                DateOfBirth = userDc.DateOfBirth,
             };
         }
     }

@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System;
 using System.Threading;
+using ServiceLibrary.CustomException;
+using ServiceLibrary.Model;
+using ServiceLibrary.Services;
 
-namespace MyServiceLibrary.Tests
+namespace ServiceLibrary.Tests
 {
     [TestClass]
     public class UserServiceTests

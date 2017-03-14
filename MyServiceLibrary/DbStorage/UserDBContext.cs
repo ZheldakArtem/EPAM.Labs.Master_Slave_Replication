@@ -4,8 +4,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ServiceLibrary.Model;
 
-namespace MyServiceLibrary.DbStorage
+namespace ServiceLibrary.DbStorage
 {
 	public class UserDbContext:DbContext
 	{

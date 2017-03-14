@@ -1,10 +1,11 @@
-﻿using MyServiceLibrary;
+﻿using ServiceLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using ServiceLibrary.Model;
 
 namespace WcfServiceLibrary
 {
@@ -53,28 +54,7 @@ namespace WcfServiceLibrary
         [DataMember]
         public DateTime DateOfBirth { get; set; }
 
-        [DataMember]
-        public VisaDataContract UserVisa { get; set; }
-
-        [DataMember]
-        public Gender UserGender { get; set; }
     }
-
-    [DataContract]
-    public struct VisaDataContract
-    {
-        [DataMember]
-        public string Country { get; set; }
-
-        [DataMember]
-        public DateTime Start { get; set; }
-
-        [DataMember]
-        public DateTime End { get; set; }
-
-    }
-   
-
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
     // You can add XSD files into the project. After building the project, you can directly use the data types defined there, with the namespace "WcfServiceLibrary.ContractType".
 

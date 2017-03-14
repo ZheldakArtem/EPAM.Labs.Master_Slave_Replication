@@ -3,15 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ServiceLibrary.Model;
 
-namespace MyServiceLibrary.DbStorage
+namespace ServiceLibrary.DbStorage
 {
 	public class DbStorage : IStorage<User>
 	{
 		private readonly UserDbContext _userContext;
 
 		#region ctor
-		public DbStorage(string conStr)
+		public DbStorage(string conStr="Master")
 			: this(null, conStr)
 		{
 

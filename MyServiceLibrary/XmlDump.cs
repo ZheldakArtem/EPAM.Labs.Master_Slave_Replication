@@ -6,8 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Serialization;
+using ServiceLibrary.Model;
 
-namespace MyServiceLibrary
+namespace ServiceLibrary
 {
     public class XmlDump : IDumper<User>
     {

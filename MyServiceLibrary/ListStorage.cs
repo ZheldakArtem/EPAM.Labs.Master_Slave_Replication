@@ -4,8 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ServiceLibrary.Model;
 
-namespace MyServiceLibrary
+namespace ServiceLibrary
 {
     [Serializable]
     public class ListUserStorage : IStorage<User>

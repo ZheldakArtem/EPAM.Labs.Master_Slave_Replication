@@ -7,10 +7,11 @@
     <ProjectGuid>{83615058-2919-4CA9-84C2-5368CEF9F281}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>MyServiceLibrary</RootNamespace>
+    <RootNamespace>ServiceLibrary</RootNamespace>
     <AssemblyName>MyServiceLibrary</AssemblyName>
-    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -30,7 +31,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -41,19 +49,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DbStorage\DbStorage.cs" />
+    <Compile Include="DbStorage\UserDBContext.cs" />
     <Compile Include="Interfaces\IDumper.cs" />
+    <Compile Include="Interfaces\IMasterService.cs" />
+    <Compile Include="Interfaces\ISlaveService.cs" />
     <Compile Include="Interfaces\IStorage.cs" />
     <Compile Include="ListStorage.cs" />
-    <Compile Include="UserService.cs" />
+    <Compile Include="Services\MasterService.cs" />
+    <Compile Include="Services\SlaveService.cs" />
+    <Compile Include="Services\UserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="User.cs" />
-    <Compile Include="InvalidUserException.cs" />
-    <Compile Include="Visa.cs" />
+    <Compile Include="Model\User.cs" />
+    <Compile Include="CustomException\InvalidUserException.cs" />
+    <Compile Include="Model\Visa.cs" />
     <Compile Include="XmlDump.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

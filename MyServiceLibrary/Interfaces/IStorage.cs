@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyServiceLibrary
+namespace ServiceLibrary
 {
     public interface IStorage<T> : IEnumerable<T>
     {

@@ -1,4 +1,4 @@
-﻿using MyServiceLibrary;
+﻿using ServiceLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +8,8 @@ using System.Reflection;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using ServiceLibrary.Model;
+using ServiceLibrary.Services;
 
 namespace MasterSlaveReplication
 {

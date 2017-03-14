@@ -4,10 +4,11 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using MyServiceLibrary;
+using ServiceLibrary;
 using MasterSlaveReplication;
 using System.IO;
 using System.Configuration;
+using ServiceLibrary.Model;
 using WcfServiceLibrary.Services;
 
 namespace WcfServiceLibrary
