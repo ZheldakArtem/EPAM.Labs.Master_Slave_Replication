@@ -15,49 +15,48 @@ namespace MasterSlaveReplication
 {
     public class Slave : MarshalByRefObject
     {
-        private readonly int port;
-        private readonly UserService userService;
-        private readonly object lockObg = new object();
+        private readonly int _port;
+        private readonly UserService _userService;
+        private readonly object _lockObg = new object();
         public Slave(int port)
         {
-            this.port = port;
-            this.userService = new UserService();
+            this._port = port;
+            this._userService = new UserService();
         }
 
 	    public User GetUserById(int id)
 	    {
-		    return this.userService.GetUserById(id);
+		    return this._userService.GetUserById(id);
 	    }
 
 	    public IList<User> SearchByName(User user)
 	    {
-		    return this.userService.SearchByName(user);
+		    return this._userService.SearchByName(user);
 	    }
 
 	    public IList<User> SearchByLastName(User user)
 	    {
-		    return this.userService.SearchByLastName(user);
+		    return this._userService.SearchByLastName(user);
 	    }
 
 	    public IList<User> SearchByLastAndFirstName(User user)
 	    {
-		    return this.userService.SearchByLastAndFirstName(user);
+		    return this._userService.SearchByLastAndFirstName(user);
 	    }
 
 	    public IList<User> GetUsers()
 	    {
-		    return this.userService.GetUsers();
+		    return this._userService.GetUsers();
 	    }
 
         public void ListenMaster()
         {
             TcpListener server = null;
-            Message message = null;
-            try
+	        try
             {
                 IPAddress localAddr = IPAddress.Parse("127.0.0.1");
 
-                server = new TcpListener(localAddr, this.port);
+                server = new TcpListener(localAddr, this._port);
 
                 // Start listening for client requests.
                 server.Start();
@@ -73,8 +72,8 @@ namespace MasterSlaveReplication
 
                     using (NetworkStream stream = client.GetStream())
                     {
-                        message = (Message)bf.Deserialize(stream);
-                        MakeAction(message);
+	                    var message = (Message)bf.Deserialize(stream);
+	                    MakeAction(message);
                     }
 
                     // Shutdown and end connection
@@ -88,23 +87,23 @@ namespace MasterSlaveReplication
             finally
             {
                 // Stop listening for new clients.
-                server.Stop();
+	            if (server != null) server.Stop();
             }
         }
 
 	    private void Add(User user)
 	    {
-		    this.userService.Add(user);
+		    this._userService.Add(user);
 	    }
 
 	    private void Update(User user)
 	    {
-		   this.userService.UpdateUser(user);
+		   this._userService.UpdateUser(user);
 	    }
 
 	    private void Delete(User user)
 	    {
-		    this.userService.Delete(user);
+		    this._userService.Delete(user);
 	    }
 
         private void MakeAction(Message message)
@@ -121,9 +120,6 @@ namespace MasterSlaveReplication
 
                 case Operation.Update:
                     Update(message.User);
-                    break;
-
-                default:
                     break;
             }
         }

@@ -51,12 +51,10 @@ namespace WcfServiceLibrary
 		    return Master.SearchByLastAndFirstName(userDC.ToUser());
 	    }
 
-
 	    public IList<User> SearchByLastName(UserDataContract userDC)
 	    {
 		    return Master.SearchByLastName(userDC.ToUser());
 	    }
-
 
 	    public IList<User> SearchByName(UserDataContract userDC)
 	    {
@@ -67,7 +65,5 @@ namespace WcfServiceLibrary
 	    {
 		    return Master.Update(userDC.ToUser());
 	    }
-
-       
     }
 }
