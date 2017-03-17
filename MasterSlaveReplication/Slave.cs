@@ -21,7 +21,7 @@ namespace MasterSlaveReplication
         public Slave(int port)
         {
             this._port = port;
-            this._userService = new UserService();
+			this._userService = new UserService(port.ToString());
         }
 
 	    public User GetUserById(int id)

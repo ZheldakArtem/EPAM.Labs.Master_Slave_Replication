@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using ServiceLibrary.CustomException;
+using ServiceLibrary.Interfaces;
 using ServiceLibrary.Model;
 
 namespace ServiceLibrary.Services
@@ -13,8 +14,8 @@ namespace ServiceLibrary.Services
         private readonly IDumper<User> _dumper;
 
         #region ctors
-		public UserService()
-			: this(new DbStorage.DbStorage(), s => ++s)
+		public UserService(string connectedStringName="Master")
+			: this(new DbStorage.DbStorage(connectedStringName), s => ++s)
         {
         }
 

@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using Microsoft.Practices.Unity;
+using ReplicationAPI.DependencyResolver;
 
 namespace ReplicationAPI
 {
@@ -19,6 +21,9 @@ namespace ReplicationAPI
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+			IUnityContainer container = UnityConfig.BuildUnityContainer();
+			config.DependencyResolver = new UnityResolver(container);
         }
     }
 }

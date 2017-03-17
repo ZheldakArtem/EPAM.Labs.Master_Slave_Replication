@@ -7,44 +7,49 @@ using System.Threading;
 using MasterSlaveReplication;
 using ReplicationAPI.Interfaces;
 using ServiceLibrary.Model;
+using QWERTY;
 
 namespace ReplicationAPI.Services
 {
-    public class SlaveService : ISlaveService
-    {
-	    private static readonly List<Slave> Slaves;
-        static SlaveService()
-        {
-            Slaves = new List<Slave>();
-        }
+	public class SlaveService : ISlaveService
+	{
+		private static readonly List<Slave> Slaves;
 
-        public static void Start(int[] ports)
-        {
-	        foreach (int p in ports)
-	        {
-		        CreateSlave(p);
-	        }
-        }
-        private static void Init()
-        {
+		static SlaveService()
+		{
+			Slaves = new List<Slave>();
+		}
 
-        }
+		public static void Start(int[] ports)
+		{
+			foreach (int p in ports)
+			{
+				CreateSlave(p);
+			}
+		}
 
-        private static void CreateSlave(int port)
-        {
+		private static void Init()
+		{
 
-            var appDomainSetup = new AppDomainSetup
-            {
-                ApplicationBase = AppDomain.CurrentDomain.BaseDirectory,
-                PrivateBinPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Slave")
-            };
+		}
 
-            AppDomain domain = AppDomain.CreateDomain(string.Format("Slave listen {0} port",port), null, appDomainSetup);
+		private static void CreateSlave(int port)
+		{
+			try
+			{
+				var slave=new Slave(port);
 
-
-            var slave = (Slave)domain.CreateInstanceAndUnwrap("MasterSlaveReplication, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", typeof(Slave).FullName, false, BindingFlags.Default, null, new object[] { port }, null, null);
-            new Thread(() => slave.ListenMaster()).Start();
-            Slaves.Add(slave);
+				new Thread(() => slave.ListenMaster()).Start();
+				Slaves.Add(slave);
+				
+			}
+			catch (Exception ex)
+			{
+					
+				var message=ex.Message;
+			}
+           
+           
         }
 
         public IList<User> SearchByLastAndFirstName(User userDc)
