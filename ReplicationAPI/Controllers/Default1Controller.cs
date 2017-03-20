@@ -5,6 +5,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading;
 using System.Web.Http;
 using ReplicationAPI.Interfaces;
 using ReplicationAPI.Services;
@@ -25,7 +26,16 @@ namespace ReplicationAPI.Controllers
 		[HttpGet]
 	    public IHttpActionResult Index()
 		{
-			
+			for (int i = 0; i < 1000; i++)
+				{
+					_masterService.Add(new User()
+					{
+						FirstName = "adadddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadaddddddddddddddddddddddddd" + i,
+						DateOfBirth = DateTime.Now,
+						LastName = "qwadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddadadddddddddddddddddddddddf" + i
+					});
+				}
+
 			//var d = _masterService.Users.ToList();
 			return Ok();
 	    }

@@ -15,7 +15,7 @@ namespace ReplicationAPI.Services
 			//Configuration cfg = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
 			//var sections = cfg.Sections;
 			//var settings = (CustomConfigSection)sections["initialSettings"];
-	        var ports = new[]{243,2332};//settings.ServiceNodesItems.ToArray();
+			var ports = new[] { 243, 2332, 2333 };//settings.ServiceNodesItems.ToArray();
             SlaveService.Start(ports);
             Master = new Master(ports);
         }

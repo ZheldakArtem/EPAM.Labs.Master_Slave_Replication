@@ -201,10 +201,6 @@
       <Project>{83615058-2919-4ca9-84c2-5368cef9f281}</Project>
       <Name>ServiceLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\QWERTY\QWERTY.csproj">
-      <Project>{a632c5bf-d1e3-40f6-9df2-ad491f7fb00f}</Project>
-      <Name>QWERTY</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

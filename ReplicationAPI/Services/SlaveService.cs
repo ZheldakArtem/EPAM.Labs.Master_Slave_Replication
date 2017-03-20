@@ -7,7 +7,6 @@ using System.Threading;
 using MasterSlaveReplication;
 using ReplicationAPI.Interfaces;
 using ServiceLibrary.Model;
-using QWERTY;
 
 namespace ReplicationAPI.Services
 {

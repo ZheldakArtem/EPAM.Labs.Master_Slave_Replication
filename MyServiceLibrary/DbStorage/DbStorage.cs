@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using ServiceLibrary.Interfaces;
 using ServiceLibrary.Model;
@@ -37,9 +38,14 @@ namespace ServiceLibrary.DbStorage
 
 		public int Add(User user)
 		{
-			var newUser = _userContext.Users.Add(user);
-			_userContext.SaveChanges();
+			User newUser = null;
+			lock (user)
+			{
+				var d = Thread.CurrentThread.ManagedThreadId;
 
+				newUser = _userContext.Users.Add(user);
+				_userContext.SaveChanges();
+			}
 			return newUser.Id;
 		}
 
