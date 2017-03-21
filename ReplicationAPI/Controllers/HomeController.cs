@@ -23,7 +23,6 @@ namespace ReplicationAPI.Controllers
 			_masterService = new MasterService();
 	    }
 
-		[HttpGet]
 	    public IHttpActionResult Initialize()
 		{
 			for (int i = 0; i < 1000; i++)
@@ -38,6 +37,40 @@ namespace ReplicationAPI.Controllers
 
 			//var d = _masterService.Users.ToList();
 			return Ok();
+	    }
+
+	    [HttpGet]
+	    public IHttpActionResult GetUser(int id)
+	    {
+		    return Ok(_masterService.GetUserById(id));
+	    }
+
+		[HttpDelete]
+	    public IHttpActionResult DeleteUser(User user)
+	    {
+			return Ok(_masterService.Delete(user));
+	    }
+
+		[HttpPost]
+	    public IHttpActionResult AddU(User user)
+	    {
+		    if ( _masterService.Add(user)<=0)
+		    {
+			    return BadRequest();
+		    }
+
+		    return Ok();
+	    }
+
+	    [HttpPut]
+	    public IHttpActionResult Update(User user)
+	    {
+		    if (!_masterService.Update(user))
+		    {
+			    return BadRequest();
+		    }
+		    
+		    return Ok();
 	    }
     }
 }
