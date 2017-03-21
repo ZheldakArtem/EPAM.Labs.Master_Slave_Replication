@@ -19,7 +19,7 @@ namespace ReplicationAPI
             config.Routes.MapHttpRoute(
                 name: "DefaultApi",
                 routeTemplate: "{controller}/{action}/{id}",
-				defaults: new { controller = "Default1", action = "Index", id = RouteParameter.Optional }
+				defaults: new { controller = "Home", action = "Index", id = RouteParameter.Optional }
             );
 
 			//IUnityContainer container = UnityConfig.BuildUnityContainer();

@@ -6,6 +6,8 @@ namespace ServiceLibrary.Model
     [Serializable]
     public class User : IEqualityComparer<User>, IEquatable<User>
     {
+		#region prop
+
         public int Id { get; set; }
 
         public string FirstName { get; set; }
@@ -13,8 +15,12 @@ namespace ServiceLibrary.Model
         public string LastName { get; set; }
 
         public DateTime DateOfBirth { get; set; }
+		#endregion
 
-       // public Visa UserVisa { get; set; }
+		#region methods
+
+
+		// public Visa UserVisa { get; set; }
 
         //public Gender UserGender { get; set; }
 
@@ -58,6 +64,8 @@ namespace ServiceLibrary.Model
         public override string ToString()
         {
 			return string.Format("Name: {0} \n Sername: {1} \n Date Of Birthday: {2}", this.FirstName, this.LastName, this.DateOfBirth);
-        }
-    }
+		}
+
+		#endregion
+	}
 }
