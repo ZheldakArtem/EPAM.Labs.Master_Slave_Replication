@@ -1,8 +1,18 @@
 (function(){
-    angular.module("main",[]).
-        controller("replicationCtr",[
-            "$scope",
-            function($scope,service){
-               // $scope.name="Hello world";
+    angular.module("main",["replicationServiceModule"])
+        .controller("replicationCtr",[
+            "$scope","replicationService",
+            function($scope, service){
+
+              $scope.getUser= function(id){
+                service.getUser(id).then(
+                    function(){
+                        alert('GOOD');
+                    },
+                    function(){
+                        alert('ERROR')
+                    }
+                );
+              }
             }]);
 }())
