@@ -16,5 +16,7 @@ namespace ServiceLibrary.Interfaces
         bool UpdateUser(T user);
 
         IList<T> GetUsers();
-    }
+
+		int LastId();
+	}
 }

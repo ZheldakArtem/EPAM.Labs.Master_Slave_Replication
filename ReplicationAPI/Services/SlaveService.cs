@@ -53,23 +53,37 @@ namespace ReplicationAPI.Services
 
         public IList<User> SearchByLastAndFirstName(User userDc)
         {
-            int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count() - 1);
+            int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count());
 
             return Slaves[slave].SearchByLastAndFirstName(userDc);
         }
 
 		public IList<User> SearchByLastName(User userDc)
         {
-            int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count() - 1);
+            int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count());
 
             return Slaves[slave].SearchByLastName(userDc);
         }
 
 		public IList<User> SearchByName(User userDc)
         {
-            int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count() - 1);
+            int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count());
 
             return Slaves[slave].SearchByName(userDc);
         }
+
+		public User SearchById(int id)
+		{
+			int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count()-1);
+
+			return Slaves[slave].GetUserById(id);
+		}
+
+
+		public int LastId()
+		{
+			int slave = Slaves.Count() == 1 ? 0 : new Random().Next(0, Slaves.Count());
+			return Slaves[slave].LastId();
+		}
 	}
 }

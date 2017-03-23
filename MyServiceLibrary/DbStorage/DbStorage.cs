@@ -12,9 +12,9 @@ namespace ServiceLibrary.DbStorage
 	public class DbStorage : IStorage<User>
 	{
 		private readonly UserDbContext _userContext;
-
+		private readonly object _lockObg = new object();
 		#region ctor
-		public DbStorage(string conStr="Master")
+		public DbStorage(string conStr = "Master")
 			: this(null, conStr)
 		{
 
@@ -59,9 +59,12 @@ namespace ServiceLibrary.DbStorage
 
 		public User GetUserById(int id)
 		{
-			var user = _userContext.Users.FirstOrDefault(u => u.Id == id);
-			_userContext.SaveChanges();
-
+			User user;
+			lock (_lockObg)
+			{
+				 user = _userContext.Users.FirstOrDefault(u => u.Id == id);
+				_userContext.SaveChanges();
+			}
 			return user;
 		}
 
@@ -110,6 +113,11 @@ namespace ServiceLibrary.DbStorage
 		public void Dispose()
 		{
 			_userContext.Dispose();
+		}
+
+		public int LastId()
+		{
+			return _userContext.Users.Max(c => c.Id);
 		}
 	}
 }

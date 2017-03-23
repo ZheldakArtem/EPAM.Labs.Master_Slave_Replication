@@ -123,5 +123,10 @@ namespace MasterSlaveReplication
                     break;
             }
         }
-    }
+
+		public int LastId()
+		{
+			return this._userService.LastId();
+		}
+	}
 }

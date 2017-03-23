@@ -1,20 +1,28 @@
 ﻿<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <title>Replication</title>
-    <script src="Scripts/angular/angular.js"></script>
-    <script src="Scripts/angular/services/replicationService.js"></script>
-    <script src="Scripts/angular/controllers/replicationCtr.js"></script>
-    
+	<title>Replication</title>
+	<script src="Scripts/angular/angular.js"></script>
+	<script src="Scripts/angular/services/replicationService.js"></script>
+	<script src="Scripts/angular/controllers/replicationCtr.js"></script>
+	<script src="Scripts/jquery/jquery-3.1.1.js"></script>
+	<link href="Content/site.css" rel="stylesheet">
 </head>
 <body>
 <div ng-app="main">
-    <div ng-controller="replicationCtr">
-        <p>Name : <input type="text" ng-model="ID"></p>
-        <h1>Hello {{ID}}</h1>
-        <button ng-click='getUser(ID)'>Start</button>
-    </div>
+	<div ng-controller="replicationCtr">
+		<button ng-click='getUserMaster()'>Start test with only Master</button>
+		<button ng-click='getUserSlaves()'>Start test with slaves</button>
+	</div>
 
 </div>
+	<button id="showChart">Get Chart</button>
+	<div class="container">
+		<div>
+			<canvas id="myChart"></canvas>
+		</div>
+	</div>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+	<script src="Scripts/customChart.js"></script>
 </body>
 </html>

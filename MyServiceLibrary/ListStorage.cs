@@ -85,5 +85,11 @@ namespace ServiceLibrary
         {
             return GetEnumerator();
         }
-    }
+
+
+		public int LastId()
+		{
+			throw new NotImplementedException();
+		}
+	}
 }

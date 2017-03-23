@@ -28,7 +28,7 @@ namespace ServiceLibrary.Services
         {
         }
 
-        public UserService(IStorage<User> list, Func<int, int> inc, IDumper<User> dumper = null)
+	    private UserService(IStorage<User> list, Func<int, int> inc, IDumper<User> dumper = null)
         {
             this._userStorage = list;
             this._increment = inc;
@@ -182,5 +182,10 @@ namespace ServiceLibrary.Services
 	    {
 			return this._lastId == 0 ? this._increment(0) : this._increment(_lastId);
 	    }
-    }
+
+		public int LastId()
+		{
+			return _userStorage.LastId();
+		}
+	}
 }

@@ -30,4 +30,3 @@ C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\EntityFramewo
 C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
 C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache

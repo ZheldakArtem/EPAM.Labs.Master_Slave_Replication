@@ -20,5 +20,7 @@ namespace ReplicationAPI.Interfaces
 		IList<User> SearchByLastAndFirstName(User user);
 
 		IList<User> GetUsers();
+
+		int LastId();
 	}
 }

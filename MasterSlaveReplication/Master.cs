@@ -30,6 +30,10 @@ namespace MasterSlaveReplication
         private readonly UserService _userService;
         private readonly int[] _ports;
 
+	    public Master():this(null)
+	    {
+				
+	    }
         public Master(int[] ports)
         {
             this._ports = ports;
@@ -99,21 +103,34 @@ namespace MasterSlaveReplication
 
         private void SendMessage(Message message)
         {
-	        var bf = new BinaryFormatter();
-            // Create a TcpClient.
-            // Note, for this client to work you need to have a TcpServer 
-            // connected to the same address as specified by the server, port
-            // combination.
-	        foreach (int p in _ports)
+	        if (_ports != null)
 	        {
-		        using (TcpClient client = new TcpClient("127.0.0.1", p))
+				var bf = new BinaryFormatter();
+				// Create a TcpClient.
+				// Note, for this client to work you need to have a TcpServer 
+				// connected to the same address as specified by the server, port
+				// combination.
+		        lock (bf)
 		        {
-			        using (NetworkStream stream = client.GetStream())
-			        {
-				        bf.Serialize(stream, message);
-			        }
+					foreach (int p in _ports)
+					{
+						using (TcpClient client = new TcpClient("127.0.0.1", p))
+						{
+							using (NetworkStream stream = client.GetStream())
+							{
+								bf.Serialize(stream, message);
+							}
+						}
+					}
 		        }
+			
 	        }
+	       
         }
-    }
+
+		public int LastId()
+		{
+			return this._userService.LastId();
+		}
+	}
 }
