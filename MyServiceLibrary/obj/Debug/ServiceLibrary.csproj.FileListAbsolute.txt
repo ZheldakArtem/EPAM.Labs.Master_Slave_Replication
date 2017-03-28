@@ -21,12 +21,3 @@ C:\Users\Artem\Source\Repos\SampleUserService2\MyServiceLibrary\bin\Debug\MyServ
 C:\Users\Artem\Source\Repos\SampleUserService2\MyServiceLibrary\obj\Debug\ServiceLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Artem\Source\Repos\SampleUserService2\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
 C:\Users\Artem\Source\Repos\SampleUserService2\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll.config
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\MyServiceLibrary.dll
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\MyServiceLibrary.pdb
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\EntityFramework.dll
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\EntityFramework.xml
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\obj\Debug\MyServiceLibrary.dll
-C:\Users\Artsem_Zhaldak\Desktop\Diploma\MyServiceLibrary\obj\Debug\MyServiceLibrary.pdb

@@ -3,6 +3,7 @@ using System.Web.Http;
 using ReplicationAPI.Interfaces;
 using ReplicationAPI.Services;
 using ServiceLibrary.Model;
+using System.Threading.Tasks;
 
 namespace ReplicationAPI.Controllers
 {
@@ -34,7 +35,7 @@ namespace ReplicationAPI.Controllers
 		}
 
 		[HttpGet]
-		public IHttpActionResult GetUserMaster(int id)
+		public Task<IHttpActionResult> GetUserMaster(int id)
 		{
 			return Ok(_masterService.GetUserById(id));
 		}
