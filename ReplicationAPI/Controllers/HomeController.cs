@@ -35,7 +35,7 @@ namespace ReplicationAPI.Controllers
 		}
 
 		[HttpGet]
-		public Task<IHttpActionResult> GetUserMaster(int id)
+		public IHttpActionResult GetUserMaster(int id)
 		{
 			return Ok(_masterService.GetUserById(id));
 		}

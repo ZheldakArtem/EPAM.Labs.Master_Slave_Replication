@@ -7,54 +7,54 @@ using System.Web.Http.Dependencies;
 
 namespace ReplicationAPI.DependencyResolver
 {
-	public class UnityResolver : IDependencyResolver
-	{
-		protected IUnityContainer container;
+	//public class UnityResolver : IDependencyResolver
+	//{
+	//	protected IUnityContainer container;
 
-		public UnityResolver(IUnityContainer container)
-		{
-			if (container == null)
-			{
-				throw new ArgumentException("container");
-			}
-			this.container = container;
-		}
+	//	public UnityResolver(IUnityContainer container)
+	//	{
+	//		if (container == null)
+	//		{
+	//			throw new ArgumentException("container");
+	//		}
+	//		this.container = container;
+	//	}
 
-		public IDependencyScope BeginScope()
-		{
-			var child = container.CreateChildContainer();
-			return new UnityResolver(child);
-		}
+	//	public IDependencyScope BeginScope()
+	//	{
+	//		var child = container.CreateChildContainer();
+	//		return new UnityResolver(child);
+	//	}
 
-		public object GetService(Type serviceType)
-		{
-			try
-			{
-				return container.Resolve(serviceType);
-			}
-			catch (ResolutionFailedException)
-			{
+	//	public object GetService(Type serviceType)
+	//	{
+	//		try
+	//		{
+	//			return container.Resolve(serviceType);
+	//		}
+	//		catch (ResolutionFailedException)
+	//		{
 
-				return null;
-			}
-		}
+	//			return null;
+	//		}
+	//	}
 
-		public IEnumerable<object> GetServices(Type serviceType)
-		{
-			try
-			{
-				return container.ResolveAll(serviceType);
-			}
-			catch (ResolutionFailedException)
-			{
+	//	public IEnumerable<object> GetServices(Type serviceType)
+	//	{
+	//		try
+	//		{
+	//			return container.ResolveAll(serviceType);
+	//		}
+	//		catch (ResolutionFailedException)
+	//		{
 
-				return new List<object>();
-			}
-		}
+	//			return new List<object>();
+	//		}
+	//	}
 
-		public void Dispose()
-		{
-			container.Dispose();
-		}
-	}
+	//	public void Dispose()
+	//	{
+	//		container.Dispose();
+	//	}
+	//}
 }

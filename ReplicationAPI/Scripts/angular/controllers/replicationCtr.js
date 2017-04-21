@@ -6,7 +6,7 @@
             	var startTime, endTime, counter = 0;
             	var index1 = makeCounter();
             	var index2 = makeCounter();
-            	$window.numbReq = [500, 1000, 1500, 2000, 3000, 4000, 6000, 7000];
+            	$window.numbReq = [500, 1000, 1500, 2000, 3000, 4000, 6000, 6500];
             	$window.masterData = [];
             	$window.slavesData = [];
 

@@ -33,3 +33,12 @@ C:\Users\Artem\Source\Repos\SampleUserService2\MasterSlaveReplication\bin\Debug\
 C:\Users\Artem\Source\Repos\SampleUserService2\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.csprojResolveAssemblyReference.cache
 C:\Users\Artem\Source\Repos\SampleUserService2\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.dll
 C:\Users\Artem\Source\Repos\SampleUserService2\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\bin\Debug\MasterSlaveReplication.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\bin\Debug\MasterSlaveReplication.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\bin\Debug\MyServiceLibrary.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\bin\Debug\EntityFramework.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\bin\Debug\MyServiceLibrary.pdb
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\bin\Debug\EntityFramework.xml
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.csprojResolveAssemblyReference.cache
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.dll
+C:\Users\Artsem_Zhaldak\Source\Repos\EPAM.Labs.Master_Slave_Replication\MasterSlaveReplication\obj\Debug\MasterSlaveReplication.pdb

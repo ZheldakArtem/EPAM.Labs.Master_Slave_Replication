@@ -57,13 +57,13 @@ namespace ServiceLibrary.DbStorage
 			return removedUser != null;
 		}
 
-		public async Task<User> GetUserById(int id)
+		public User GetUserById(int id)
 		{
 			User user;
 			lock (_lockObg)
 			{
-				 user = await _userContext.Users.FindAsync(u => u.Id == id);
-				await _userContext.SaveChangesAsync();
+				 user =  _userContext.Users.FirstOrDefault(u => u.Id == id);
+				 _userContext.SaveChanges();
 			}
 			return user;
 		}
